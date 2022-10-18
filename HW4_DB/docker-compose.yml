@@ -1,0 +1,43 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:14.5
+    environment:
+      POSTGRES_DB: "ЯКОВЛЕВ_БПИ206"
+      POSTGRES_USER: "ЯКОВЛЕВ_БПИ206"
+      POSTGRES_PASSWORD: "ЯКОВЛЕВ_БПИ206"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ./docker/db/scripts:/docker-entrypoint-initdb.d
+      - ./docker/db/data:/var/lib/postgresql/data
+      - ./docker.db.config:/var/lib/postgresql/data/pgdata/postgresql.conf
+    ports:
+      - "5432:5432"
+
+  postgres:
+    image: postgres:14.5
+    environment:
+      POSTGRES_DB: "ЯКОВЛЕВ_БПИ206"
+      POSTGRES_USER: "ЯКОВЛЕВ_БПИ206"
+      POSTGRES_PASSWORD: "ЯКОВЛЕВ_БПИ206"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ./docker/db/scripts:/docker-entrypoint-initdb.d
+      - ./docker/db/data:/var/lib/postgresql/data
+      - ./docker.db.config:/var/lib/postgresql/data/pgdata/postgresql.conf
+    ports:
+      - "5432:5432"
+
+  postgres:
+    image: postgres:14.5
+    environment:
+      POSTGRES_DB: "ЯКОВЛЕВ_БПИ206"
+      POSTGRES_USER: "ЯКОВЛЕВ_БПИ206"
+      POSTGRES_PASSWORD: "ЯКОВЛЕВ_БПИ206"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ./docker/db/scripts:/docker-entrypoint-initdb.d
+      - ./docker/db/data:/var/lib/postgresql/data
+      - ./docker.db.config:/var/lib/postgresql/data/pgdata/postgresql.conf
+    ports:
+      - "5432:5432"
