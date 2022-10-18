@@ -6,11 +6,11 @@ services:
       POSTGRES_DB: "ЯКОВЛЕВ_БПИ206"
       POSTGRES_USER: "ЯКОВЛЕВ_БПИ206"
       POSTGRES_PASSWORD: "ЯКОВЛЕВ_БПИ206"
-      PGDATA: "/var/lib/postgresql/data/pgdata"
+      PGDATA: "/var/lib/postgresql/data/Library/pgdata"
     volumes:
-      - ./docker/db/scripts:/docker-entrypoint-initdb.d
-      - ./docker/db/data:/var/lib/postgresql/data
-      - ./docker.db.config:/var/lib/postgresql/data/pgdata/postgresql.conf
+      - ./docker/db/scripts/Library:/docker-entrypoint-initdb.d
+      - ./docker/db/data/Library:/var/lib/postgresql/data
+      - ./docker.db.config:/var/lib/postgresql/data/Library/pgdata/postgresql.conf
     ports:
       - "5432:5432"
 
@@ -20,11 +20,11 @@ services:
       POSTGRES_DB: "ЯКОВЛЕВ_БПИ206"
       POSTGRES_USER: "ЯКОВЛЕВ_БПИ206"
       POSTGRES_PASSWORD: "ЯКОВЛЕВ_БПИ206"
-      PGDATA: "/var/lib/postgresql/data/pgdata"
+      PGDATA: "/var/lib/postgresql/data/Hospital/pgdata"
     volumes:
-      - ./docker/db/scripts:/docker-entrypoint-initdb.d
-      - ./docker/db/data:/var/lib/postgresql/data
-      - ./docker.db.config:/var/lib/postgresql/data/pgdata/postgresql.conf
+      - ./docker/db/scripts/Hospital:/docker-entrypoint-initdb.d
+      - ./docker/db/data/Hospital:/var/lib/postgresql/data
+      - ./docker.db.config:/var/lib/postgresql/data/Hospital/pgdata/postgresql.conf
     ports:
       - "5432:5432"
 
@@ -34,10 +34,10 @@ services:
       POSTGRES_DB: "ЯКОВЛЕВ_БПИ206"
       POSTGRES_USER: "ЯКОВЛЕВ_БПИ206"
       POSTGRES_PASSWORD: "ЯКОВЛЕВ_БПИ206"
-      PGDATA: "/var/lib/postgresql/data/pgdata"
+      PGDATA: "/var/lib/postgresql/data/Train/pgdata"
     volumes:
-      - ./docker/db/scripts:/docker-entrypoint-initdb.d
+      - ./docker/db/scripts/Train:/docker-entrypoint-initdb.d
       - ./docker/db/data:/var/lib/postgresql/data
-      - ./docker.db.config:/var/lib/postgresql/data/pgdata/postgresql.conf
+      - ./docker.db.config:/var/lib/postgresql/data/Train/pgdata/postgresql.conf
     ports:
       - "5432:5432"
