@@ -10,8 +10,8 @@ CREATE TABLE "Station" (
 
 CREATE TABLE "StationPersonell" (
 	"id" serial NOT NULL,
-	"name" serial NOT NULL,
-	"work" TEXT NOT NULL,
+	"name" TEXT NOT NULL,
+	"work" bigint NOT NULL,
 	CONSTRAINT "StationPersonell_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -56,7 +56,7 @@ CREATE TABLE "Room" (
 CREATE TABLE "Patient" (
 	"id" serial NOT NULL,
 	"name" TEXT NOT NULL,
-	"doctor" TEXT NOT NULL,
+	"doctor" bigint NOT NULL,
 	"desease" TEXT NOT NULL,
 	CONSTRAINT "Patient_pk" PRIMARY KEY ("id")
 ) WITH (
@@ -69,8 +69,8 @@ CREATE TABLE "Admission" (
 	"id" serial NOT NULL,
 	"from" DATE NOT NULL,
 	"to" DATE NOT NULL,
-	"room" DATE NOT NULL,
-	"patient" DATE NOT NULL,
+	"room" bigint NOT NULL,
+	"patient" bigint NOT NULL,
 	CONSTRAINT "Admission_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE

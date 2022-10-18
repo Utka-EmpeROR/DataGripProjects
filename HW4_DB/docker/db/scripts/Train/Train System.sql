@@ -12,8 +12,7 @@ CREATE TABLE "City" (
 CREATE TABLE "Station" (
 	"id" serial NOT NULL,
 	"name" TEXT NOT NULL,
-	"city" TEXT NOT NULL,
-	"city" TEXT NOT NULL,
+	"city" bigint NOT NULL,
 	CONSTRAINT "Station_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -48,7 +47,6 @@ CREATE TABLE "Connected" (
 
 
 ALTER TABLE "Station" ADD CONSTRAINT "Station_fk0" FOREIGN KEY ("city") REFERENCES "City"("id");
-ALTER TABLE "Station" ADD CONSTRAINT "Station_fk1" FOREIGN KEY ("city") REFERENCES "City"("id");
 
 ALTER TABLE "Train" ADD CONSTRAINT "Train_fk0" FOREIGN KEY ("startSta") REFERENCES "Station"("id");
 ALTER TABLE "Train" ADD CONSTRAINT "Train_fk1" FOREIGN KEY ("endSta") REFERENCES "Station"("id");
